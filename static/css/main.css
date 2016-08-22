@@ -1,0 +1,17 @@
+#main{
+	top: 50px;
+	position: relative;
+	margin: 0 auto;
+    width: 80%;
+}
+
+.card_contant{
+	display:flex;
+	justify-content:space-between;
+	margin:10px 0;
+}
+
+.ant-card-head{
+	background-color: #20c5c5;
+    color: white;
+}
