@@ -1,5 +1,5 @@
 #main{
-	top: 50px;
+	top: 100px;
 	position: relative;
 	margin: 0 auto;
     width: 80%;
@@ -8,10 +8,25 @@
 .card_contant{
 	display:flex;
 	justify-content:space-between;
+	flex-wrap: wrap;
 	margin:10px 0;
 }
 
 .ant-card-head{
 	background-color: #20c5c5;
     color: white;
+}
+
+.card_width{
+	width: 30%;
+	display:inline-block;
+	margin:5px 0;
+}
+
+.ant-card-head-title{
+	width: 60%;
+}
+
+.ant-card-body{
+	max-height: 100px;
 }

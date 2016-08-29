@@ -2,12 +2,12 @@ import {Card} from 'antd';
 
 var MainList= React.createClass({
     render() {
+    	const { title, post, time, author } = this.props;
+
         return (
         	
-	        <Card title="Card title" style={{ width: '20%',display:'inline-block' }}>
-			    <p>Card content</p>
-			    <p>Card content</p>
-			    <p>Card content</p>
+	        <Card title={title} extra={author + '--' + time} className="card_width" >
+			   { post }
 			</Card>
 
         );

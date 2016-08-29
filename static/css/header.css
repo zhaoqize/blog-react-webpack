@@ -1,5 +1,5 @@
 #header{
-	height:50px;
+	height:100px;
 	width:100%;
 	box-shadow:0 2px 4px -1px rgba(0,0,0,0.25); 
 	position: fixed;
@@ -12,14 +12,14 @@
 	display: flex;
     justify-content: space-around;
     align-items: center;
-    line-height: 50px;
-    height: 50px;
+    line-height: 100px;
+    height: 100px;
 }
 
 .header_hover > a{
 	padding: 5px 10px;
 	display: inline-block;
-	height: 53px;
+	height: 103px;
 }
 
 .header_hover > a:hover{
