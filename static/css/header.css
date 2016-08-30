@@ -28,12 +28,28 @@
 	transition:background-color 2s,color 1s;
 }
 
+.ant-popover-placement-bottom .ant-popover-arrow{
+    border-bottom-color: white;
+    top: inherit;
+}
+
+.ant-popover-inner{
+    border-radius: 0;
+}
+
 .wrap {
     perspective: 1000px;
     perspective-origin: 50% 50%;
     background-size: 80px 80px;
     width: 100px;
 }
+
+.logout{
+    right:20px;
+    position:absolute;
+}
+
+/*3d旋转效果*/
 
 @keyframes bganim {
     from {
@@ -139,4 +155,21 @@
 
 .wrap:hover .bottom {
     transform: rotateX(270deg) translateZ(50px) translateY(50px);
+}
+
+/*抖动效果*/
+@-webkit-keyframes buzz-out {
+  0% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+.logout:hover  {
+            -webkit-animation-name: buzz-out;
+            -webkit-animation-duration: 0.75s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: 1;
 }
