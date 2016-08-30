@@ -7,7 +7,7 @@ var MainList= React.createClass({
         return (
         	
 	        <Card title={title} extra={author + '--' + time} className="card_width" >
-			   { post }
+			   <div className="pageContent">{ post }</div>
 			</Card>
 
         );

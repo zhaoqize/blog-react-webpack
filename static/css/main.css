@@ -39,3 +39,8 @@
 	margin-left:10px;
 	background-size: contain;
 }
+
+.pageContent{
+	height: 52px;
+    overflow: hidden;
+}
