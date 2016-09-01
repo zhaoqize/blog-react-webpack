@@ -20,10 +20,9 @@ module.exports = {
         test: /\.jsx?$/, 
         loader: 'babel',
         query: {
-            presets: ['react', 'es2015'],
             plugins: [["antd", { "style": "css" }]]
           },
-          exclude: /node_modules/
+        exclude: /node_modules/
       },{
         test: /\.css$/, 
         loader: 'style!css' 
