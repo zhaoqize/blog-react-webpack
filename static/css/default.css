@@ -7,12 +7,8 @@ th, td /* table elements 表格元素 */ {
     margin: 0;
     padding: 0;
 }
-html,body{
-	height: 100%;
+
+body,html{
+	height: auto;
 }
-body{
-	/*background-image: url('../image/bga.jpg');
-	background-size: cover;
-	background-attachment: fixed;*/
-	/*background: linear-gradient(to bottom right, #91c8e2 , #f3f5f8);*/
-}
+

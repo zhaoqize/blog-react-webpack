@@ -9,23 +9,55 @@ var MainLists = React.createClass({
 	        post:[]  
 	    };
 	},
-	componentDidMount() {
+	bindScroll:function(){
 		const _this = this;
+		let	  count = 1;
+		//谷歌浏览器可见区域高度 document.documentElement.clientHeight
+		//谷歌浏览器body区域高度 document.body.clientHeight = document.body.clientHeight
+		//谷歌浏览器被卷进去的高度 document.body.scrollTop
+		//谷歌浏览器被卷高度+可视区域高度 document.body.scrollHeight
+		//判断滚动条接近底部 document.body.clientHeight - document.documentElement.clientHeight <= document.body.scrollTop
+	    window.onscroll = function(){
+	    	if(document.body.clientHeight - document.documentElement.clientHeight <= document.body.scrollTop){
+	    		console.log(document.body.scrollTop);
+	    		
+	    		fetch({
+			      	url: '/server/getAllPages.php?bid=' + ++count,
+			      	method: 'get',
+			      	success:function(results){
+			      		console.log("请求成功！");
+			      		_this.setState({
+			      			post: results
+			      		})
+			      		
+			      	},
+			      	error:function(){
+			      		console.log("请求失败！");
+			      	}
+			      })  
+	    	}
+	    }  
+		
+	},
+	componentDidMount() {
+	  	const _this = this;
+
+	  	_this.bindScroll();
 	    //成功提交
-      fetch({
-      	url: '/server/getAllPages.php',
-      	method: 'get',
-      	success:function(results){
-      		console.log("请求成功！");
-      		_this.setState({
-      			post: results
-      		})
-      		
-      	},
-      	error:function(){
-      		console.log("请求失败！");
-      	}
-      })  
+	      fetch({
+	      	url: '/server/getAllPages.php?bid=1',
+	      	method: 'get',
+	      	success:function(results){
+	      		console.log("请求成功！");
+	      		_this.setState({
+	      			post: results
+	      		})
+	      		
+	      	},
+	      	error:function(){
+	      		console.log("请求失败！");
+	      	}
+	      })  
 	},
 	render:function(){
 

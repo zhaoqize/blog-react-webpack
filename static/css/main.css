@@ -1,5 +1,5 @@
 #main{
-	top: 100px;
+	/*top: 100px;*/
 	position: relative;
 	margin: 0 auto;
     width: 80%;
@@ -9,8 +9,7 @@
 	display:flex;
 	justify-content:space-between;
 	flex-wrap: wrap;
-	margin:10px 0;
-	position: absolute;
+	margin:10px 0 0 0;
 }
 
 .ant-card-head{
