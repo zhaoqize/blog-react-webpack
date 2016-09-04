@@ -9,6 +9,7 @@
 谷歌浏览器被卷高度+可视区域高度 document.body.scrollHeight
 
 判断滚动条接近底部 document.body.clientHeight - document.documentElement.clientHeight <= document.body.scrollTop
+getboundingclientrect()获取一个dom距离上下左右屏幕边界的距离
 
 # 开发中增加构建速度的技巧
 
