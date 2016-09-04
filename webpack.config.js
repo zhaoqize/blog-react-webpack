@@ -1,6 +1,7 @@
 'use strict';
 
 var webpack = require('webpack');
+var path = require('path');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -22,16 +23,29 @@ module.exports = {
         query: {
             plugins: [["antd", { "style": "css" }]]
           },
-        exclude: /node_modules/
+        exclude: function(path) {
+              var isNpmModule = !!path.match(/node_modules/);
+              return isNpmModule;
+        },
       },{
         test: /\.css$/, 
-        loader: 'style!css' 
+        loader: 'style!css',
+        include:[path.join(process.cwd(), './static/css'), 
+                 path.join(process.cwd(), './node_modules/antd/lib')]
       },{
         test: /\.less$/,
-        loader: 'style!css!less'
+        loader: 'style!css!less',
+        exclude: function(path) {
+              var isNpmModule = !!path.match(/node_modules/);
+              return isNpmModule;
+        },
       },{
         test:/\.(png|jpg)$/,
-        loader:'url?limit=555000'
+        loader:'url?limit=555000',
+        exclude: function(path) {
+              var isNpmModule = !!path.match(/node_modules/);
+              return isNpmModule;
+        },
       }
       ]
     },
@@ -40,12 +54,12 @@ module.exports = {
         "React": "react",
         "ReactDOM": "react-dom"
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      compress : {
-        warnings: false
-      }
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   minimize: true,
+    //   compress : {
+    //     warnings: false
+    //   }
+    // }),
     new webpack.BannerPlugin((new Date).toLocaleDateString() + ' 打包'),
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
     new HtmlwebpackPlugin({

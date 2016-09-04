@@ -36,3 +36,16 @@
 	height: 52px;
     overflow: hidden;
 }
+
+.spin_load{
+	width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    text-align: center;
+    display: none;
+}
+
+.ant-spin-dot{
+	width: 50px;
+    height: 50px;
+}
