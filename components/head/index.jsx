@@ -1,5 +1,13 @@
 import Reg from '../main/reg';
-import { Popover, Form, Input, Button, Icon } from 'antd';
+import { Popover, 
+		 Form, 
+		 Input, 
+		 Button, 
+		 Icon } from 'antd';
+import { Link,
+         hashHistory,
+         Router,
+         Route } from 'react-router';
 
 //这里引入一定要用{}括起来
 import {fetch} from '../untils/fetch';
@@ -147,7 +155,7 @@ var Header = React.createClass({
 					<a onClick={ this.reg } style={{ marginLeft:20 }}>注册</a>
 				</div>
 				<div ref="userInfo" style={{ display:'none',alignItems: 'center' }}>
-					<a><Icon type="edit" />&nbsp;&nbsp;写博客</a>
+					<Link to="/edit"><Icon type="edit" />&nbsp;&nbsp;写博客</Link>
 					<div className="personImg"></div>
 					<span style={{ marginLeft:10 }}> {this.state.name} </span>
 					<a className="logout">退出</a>
@@ -160,5 +168,11 @@ var Header = React.createClass({
 
 Header = createForm()(Header);
 
-export default Header
+var HeaderRoute = (
+  <Router history={ hashHistory }>
+    <Route path='*' component={ Header }></Route>
+  </Router>
+)
+
+export default HeaderRoute
 
