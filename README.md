@@ -1,9 +1,13 @@
 ### | 标准模式(CSS1Compat)与怪异模式(BackCompat)
 怪异模式是针对于IE的，所以给IE增加了一个document.compatMode属性(该属性在win10下是没有的)
 document.compatMode：该属性返回浏览器渲染文档的模式。
+
 1. 5 - 页面在 IE5 模式下展示(怪异模式，且页面没指定!DOCTYPE,也认为是怪异模式)
+
 2. 7 - 页面在 IE7 模式下展示
+
 3. 8 - 页面在 IE8 模式下展示
+
 4. 9 - 页面在 IE9 模式下展示
 
 ##### 注意：
@@ -27,7 +31,7 @@ body正文区域的高度 <= body区域的距离顶部的scrollTop距离 + docum
 
 ### | 获取元素距离上下左右的距离
 getboundingclientrect()获取一个dom距离上下左右屏幕边界的距离
-
+s
 ### | 页面中鼠标各个坐标的含义
 (待完善...)
 
